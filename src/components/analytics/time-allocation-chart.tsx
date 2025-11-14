@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { Pie, PieChart, ResponsiveContainer, Cell, Legend } from 'recharts';
-import { ChartConfig, ChartContainer, ChartLegend, ChartTooltipContent } from "@/components/ui/chart"
+import { ChartConfig, ChartContainer, ChartLegend, ChartTooltipContent, ChartLegendContent } from "@/components/ui/chart"
 import { analyticsData } from '@/lib/data';
 
 const chartConfig = {
