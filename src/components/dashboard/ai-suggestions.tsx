@@ -26,14 +26,14 @@ export function AiSuggestions() {
       });
       setResolution(result.suggestedResolution);
       toast({
-        title: "AI Conflict Resolution",
-        description: "A potential solution has been generated.",
+        title: "حل النزاعات بالذكاء الاصطناعي",
+        description: "تم إنشاء حل محتمل.",
       });
     } catch (error) {
       toast({
         variant: "destructive",
-        title: "AI Error",
-        description: "Could not resolve the conflict.",
+        title: "خطأ في الذكاء الاصطناعي",
+        description: "تعذر حل النزاع.",
       });
     } finally {
       setIsResolving(null);
@@ -43,8 +43,8 @@ export function AiSuggestions() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>AI Insights</CardTitle>
-        <CardDescription>Proactive suggestions and alerts from ChronoSync AI.</CardDescription>
+        <CardTitle>رؤى الذكاء الاصطناعي</CardTitle>
+        <CardDescription>اقتراحات وتنبيهات استباقية من ChronoSync AI.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         {aiSuggestions.map((suggestion) => (
@@ -58,26 +58,26 @@ export function AiSuggestions() {
           <Dialog key={conflict.id}>
             <Alert variant="destructive">
               <TriangleAlert className="h-4 w-4" />
-              <AlertTitle>Scheduling Conflict Detected</AlertTitle>
+              <AlertTitle>تم كشف تعارض في الجدولة</AlertTitle>
               <AlertDescription className="flex justify-between items-center">
                 {conflict.description}
                 <DialogTrigger asChild>
-                  <Button size="sm" variant="destructive" onClick={() => handleResolveConflict(conflict)}>Resolve</Button>
+                  <Button size="sm" variant="destructive" onClick={() => handleResolveConflict(conflict)}>حل</Button>
                 </DialogTrigger>
               </AlertDescription>
             </Alert>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>AI Conflict Resolution</DialogTitle>
+                <DialogTitle>حل النزاعات بالذكاء الاصطناعي</DialogTitle>
                 <DialogDescription>
-                  ChronoSync AI has analyzed the conflict and suggests the following action.
+                  لقد قام ChronoSync AI بتحليل التعارض ويقترح الإجراء التالي.
                 </DialogDescription>
               </DialogHeader>
               <div className="py-4">
                 {isResolving === conflict.id && (
                   <div className="flex items-center justify-center space-x-2">
                     <Loader2 className="h-5 w-5 animate-spin" />
-                    <span>Analyzing conflict...</span>
+                    <span>جارٍ تحليل التعارض...</span>
                   </div>
                 )}
                 {resolution && (
@@ -85,7 +85,7 @@ export function AiSuggestions() {
                 )}
               </div>
               <DialogFooter>
-                  <Button>Accept Suggestion</Button>
+                  <Button>قبول الاقتراح</Button>
               </DialogFooter>
             </DialogContent>
           </Dialog>

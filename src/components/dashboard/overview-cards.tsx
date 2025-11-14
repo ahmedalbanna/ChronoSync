@@ -11,20 +11,20 @@ export function OverviewCards() {
     <>
       <Card>
         <CardHeader className="pb-2">
-          <CardDescription>Upcoming Events</CardDescription>
+          <CardDescription>الأحداث القادمة</CardDescription>
           <CardTitle className="text-4xl">{upcomingEvents}</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-xs text-muted-foreground">in the next 7 days</div>
+          <div className="text-xs text-muted-foreground">في الأيام السبعة القادمة</div>
         </CardContent>
       </Card>
       <Card>
         <CardHeader className="pb-2">
-          <CardDescription>Pending Tasks</CardDescription>
+          <CardDescription>المهام المعلقة</CardDescription>
           <CardTitle className="text-4xl">{pendingTasks}</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-xs text-muted-foreground">{completedTasks} completed this week</div>
+          <div className="text-xs text-muted-foreground">{completedTasks} مكتملة هذا الأسبوع</div>
         </CardContent>
       </Card>
     </>

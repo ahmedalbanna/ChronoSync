@@ -7,22 +7,22 @@ import { analyticsData } from '@/lib/data';
 
 const chartConfig = {
   value: {
-    label: "Hours",
+    label: "ساعات",
   },
   meetings: {
-    label: "Meetings",
+    label: "اجتماعات",
     color: "hsl(var(--chart-1))",
   },
   deepWork: {
-    label: "Deep Work",
+    label: "عمل عميق",
     color: "hsl(var(--chart-2))",
   },
   communication: {
-    label: "Communication",
+    label: "تواصل",
     color: "hsl(var(--chart-3))",
   },
   breaks: {
-    label: "Breaks",
+    label: "استراحات",
     color: "hsl(var(--chart-4))",
   },
 } satisfies ChartConfig

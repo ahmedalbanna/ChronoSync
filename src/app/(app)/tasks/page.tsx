@@ -25,13 +25,13 @@ export default function TasksPage() {
     <Card>
       <CardHeader className="flex flex-row items-center justify-between">
         <div>
-          <CardTitle>Task Management</CardTitle>
-          <CardDescription>View, manage, and track all your tasks.</CardDescription>
+          <CardTitle>إدارة المهام</CardTitle>
+          <CardDescription>عرض وإدارة وتتبع جميع مهامك.</CardDescription>
         </div>
         <Button size="sm" className="gap-1">
           <PlusCircle className="h-3.5 w-3.5" />
           <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-            Add Task
+            إضافة مهمة
           </span>
         </Button>
       </CardHeader>
@@ -39,10 +39,10 @@ export default function TasksPage() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[50px]">Status</TableHead>
-              <TableHead>Title</TableHead>
-              <TableHead>Priority</TableHead>
-              <TableHead>Due Date</TableHead>
+              <TableHead className="w-[50px]">الحالة</TableHead>
+              <TableHead>العنوان</TableHead>
+              <TableHead>الأولوية</TableHead>
+              <TableHead>تاريخ الاستحقاق</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -53,10 +53,10 @@ export default function TasksPage() {
                 </TableCell>
                 <TableCell className="font-medium">{task.title}</TableCell>
                 <TableCell>
-                  <Badge variant="outline" className={cn(priorityColors[task.priority])}>{task.priority}</Badge>
+                  <Badge variant="outline" className={cn(priorityColors[task.priority])}>{task.priority === 'High' ? 'عالية' : task.priority === 'Medium' ? 'متوسطة' : 'منخفضة'}</Badge>
                 </TableCell>
                 <TableCell>
-                  {task.dueDate ? format(task.dueDate, "MMM d, yyyy") : 'N/A'}
+                  {task.dueDate ? format(task.dueDate, "d MMM, yyyy") : 'N/A'}
                 </TableCell>
               </TableRow>
             ))}

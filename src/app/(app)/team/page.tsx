@@ -7,8 +7,8 @@ export default function TeamPage() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Team View</CardTitle>
-        <CardDescription>Collaborate and check your team's availability.</CardDescription>
+        <CardTitle>عرض الفريق</CardTitle>
+        <CardDescription>تعاون وتحقق من توافر فريقك.</CardDescription>
       </CardHeader>
       <CardContent className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {teamMembers.map((member) => (
@@ -24,7 +24,7 @@ export default function TeamPage() {
               </div>
             </CardHeader>
             <CardContent>
-              <h4 className="text-sm font-medium mb-2">Availability</h4>
+              <h4 className="text-sm font-medium mb-2">التوفر</h4>
               <div className="flex gap-2">
                 {['morning', 'afternoon', 'evening'].map(slot => (
                   <Badge
@@ -32,7 +32,7 @@ export default function TeamPage() {
                     variant={member.availability.includes(slot as any) ? 'default' : 'outline'}
                     className={`capitalize ${member.availability.includes(slot as any) ? 'bg-primary/80' : 'text-muted-foreground'}`}
                   >
-                    {slot}
+                    {slot === 'morning' ? 'صباح' : slot === 'afternoon' ? 'ظهراً' : 'مساءً'}
                   </Badge>
                 ))}
               </div>

@@ -39,15 +39,15 @@ export function TaskList() {
       ));
 
       toast({
-        title: "AI Time Estimate Complete",
-        description: `"${task.title}" will take about ${result.estimatedCompletionTime}.`,
+        title: "اكتمل تقدير الوقت بالذكاء الاصطناعي",
+        description: `"${task.title}" ستستغرق حوالي ${result.estimatedCompletionTime}.`,
       });
 
     } catch (error) {
       toast({
         variant: "destructive",
-        title: "AI Error",
-        description: "Could not estimate task completion time.",
+        title: "خطأ في الذكاء الاصطناعي",
+        description: "تعذر تقدير وقت إنجاز المهمة.",
       });
     } finally {
       setEstimatingTaskId(null);
@@ -57,8 +57,8 @@ export function TaskList() {
   return (
     <Card className="lg:col-span-3">
       <CardHeader>
-        <CardTitle>Prioritized Tasks</CardTitle>
-        <CardDescription>Your to-do list for today.</CardDescription>
+        <CardTitle>المهام ذات الأولوية</CardTitle>
+        <CardDescription>قائمة مهامك لهذا اليوم.</CardDescription>
       </CardHeader>
       <CardContent>
         <ScrollArea className="h-72">
@@ -70,7 +70,7 @@ export function TaskList() {
                   <label htmlFor={`task-${task.id}`} className="font-medium">{task.title}</label>
                   <div className="flex items-center gap-2 text-sm">
                     <Badge variant="outline" className={cn("text-xs", priorityColors[task.priority])}>
-                      {task.priority}
+                      {task.priority === 'High' ? 'عالية' : task.priority === 'Medium' ? 'متوسطة' : 'منخفضة'}
                     </Badge>
                     {task.estimatedTime && (
                       <span className="text-muted-foreground flex items-center gap-1">

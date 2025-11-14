@@ -7,8 +7,8 @@ export default function AnalyticsPage() {
     <div className="grid gap-6 sm:grid-cols-1 lg:grid-cols-2">
       <Card>
         <CardHeader>
-          <CardTitle>Time Allocation</CardTitle>
-          <CardDescription>How you spent your time this week.</CardDescription>
+          <CardTitle>تخصيص الوقت</CardTitle>
+          <CardDescription>كيف قضيت وقتك هذا الأسبوع.</CardDescription>
         </CardHeader>
         <CardContent>
           <TimeAllocationChart />
@@ -16,8 +16,8 @@ export default function AnalyticsPage() {
       </Card>
       <Card>
         <CardHeader>
-          <CardTitle>Productivity</CardTitle>
-          <CardDescription>Your task completion trend over the last week.</CardDescription>
+          <CardTitle>الإنتاجية</CardTitle>
+          <CardDescription>اتجاه إنجاز مهامك خلال الأسبوع الماضي.</CardDescription>
         </CardHeader>
         <CardContent>
           <ProductivityChart />

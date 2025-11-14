@@ -21,22 +21,22 @@ import {
 } from '@/components/ui/sidebar';
 
 const menuItems = [
-  { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '/calendar', label: 'Calendar', icon: Calendar },
-  { href: '/tasks', label: 'Tasks', icon: ClipboardList },
-  { href: '/team', label: 'Team', icon: Users },
-  { href: '/analytics', label: 'Analytics', icon: BarChart3 },
+  { href: '/dashboard', label: 'الرئيسية', icon: LayoutDashboard },
+  { href: '/calendar', label: 'التقويم', icon: Calendar },
+  { href: '/tasks', label: 'المهام', icon: ClipboardList },
+  { href: '/team', label: 'الفريق', icon: Users },
+  { href: '/analytics', label: 'التحليلات', icon: BarChart3 },
 ];
 
 export function AppSidebar() {
   const pathname = usePathname();
 
   return (
-    <Sidebar variant="sidebar" collapsible="icon" className="border-r">
+    <Sidebar variant="sidebar" collapsible="icon" className="border-l hidden md:flex">
       <SidebarHeader className="group-data-[collapsible=icon]:-ml-1 group-data-[collapsible=icon]:justify-center">
         <Link href="/dashboard" className="flex items-center gap-2 font-semibold text-primary">
           <Bot className="h-6 w-6" />
-          <span className="group-data-[collapsible=icon]:hidden">ChronoSync</span>
+          <span className="group-data-[collapsible=icon]:hidden">كرونو سينك</span>
         </Link>
       </SidebarHeader>
       <SidebarContent>
@@ -46,7 +46,7 @@ export function AppSidebar() {
               <SidebarMenuButton
                 asChild
                 isActive={pathname === item.href}
-                tooltip={{ children: item.label }}
+                tooltip={{ children: item.label, side: 'left' }}
               >
                 <Link href={item.href}>
                   <item.icon />
@@ -63,11 +63,11 @@ export function AppSidebar() {
             <SidebarMenuButton
               asChild
               isActive={pathname === '/settings'}
-              tooltip={{ children: 'Settings' }}
+              tooltip={{ children: 'الإعدادات', side: 'left' }}
             >
               <Link href="/settings">
                 <Settings />
-                <span>Settings</span>
+                <span>الإعدادات</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>

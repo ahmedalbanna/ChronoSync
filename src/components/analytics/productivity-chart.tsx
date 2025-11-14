@@ -14,7 +14,7 @@ import { format } from 'date-fns';
 
 const chartConfig = {
   tasksCompleted: {
-    label: "Tasks Completed",
+    label: "المهام المنجزة",
     color: "hsl(var(--chart-1))",
   },
 } satisfies ChartConfig
@@ -35,12 +35,12 @@ export function ProductivityChart() {
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis
             dataKey="date"
-            tickFormatter={(value) => format(new Date(value), "MMM d")}
+            tickFormatter={(value) => format(new Date(value), "d MMM")}
             tickLine={false}
             axisLine={false}
             tickMargin={8}
           />
-          <YAxis allowDecimals={false} />
+          <YAxis allowDecimals={false} reversed />
           <ChartTooltip content={<ChartTooltipContent />} />
           <Area
             type="monotone"

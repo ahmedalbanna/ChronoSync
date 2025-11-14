@@ -22,8 +22,8 @@ export function AiScheduler() {
     if (!eventDescription) {
       toast({
         variant: 'destructive',
-        title: 'Missing Information',
-        description: 'Please enter an event description.',
+        title: 'معلومات ناقصة',
+        description: 'الرجاء إدخال وصف الحدث.',
       });
       return;
     }
@@ -39,14 +39,14 @@ export function AiScheduler() {
       });
       setSuggestion(result);
       toast({
-        title: 'AI Suggestion Ready!',
-        description: 'ChronoSync has found an optimal time for your event.',
+        title: 'اقتراح الذكاء الاصطناعي جاهز!',
+        description: 'وجد كرونو سينك وقتًا مثاليًا لحدثك.',
       });
     } catch (error) {
       toast({
         variant: 'destructive',
-        title: 'AI Error',
-        description: 'Could not generate a schedule suggestion.',
+        title: 'خطأ في الذكاء الاصطناعي',
+        description: 'تعذر إنشاء اقتراح للجدول الزمني.',
       });
     } finally {
       setIsLoading(false);
@@ -56,23 +56,23 @@ export function AiScheduler() {
   return (
     <Card className="sm:col-span-2" id="ai-scheduler">
       <CardHeader className="pb-3">
-        <CardTitle>AI-Powered Scheduling</CardTitle>
+        <CardTitle>جدولة مدعومة بالذكاء الاصطناعي</CardTitle>
         <CardDescription className="max-w-lg text-balance leading-relaxed">
-          Let ChronoSync find the perfect time for your next event.
+          دع كرونو سينك يجد الوقت المثالي لحدثك القادم.
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
         <div className="grid gap-2">
-          <Label htmlFor="event-description">Event Description</Label>
+          <Label htmlFor="event-description">وصف الحدث</Label>
           <Input
             id="event-description"
-            placeholder='e.g., "Brainstorm for Project Phoenix"'
+            placeholder='مثال: "جلسة عصف ذهني لمشروع فينيكس"'
             value={eventDescription}
             onChange={(e) => setEventDescription(e.target.value)}
           />
         </div>
         <div className="grid gap-2">
-          <Label htmlFor="duration">Duration (minutes)</Label>
+          <Label htmlFor="duration">المدة (بالدقائق)</Label>
           <Input
             id="duration"
             type="number"
@@ -84,16 +84,16 @@ export function AiScheduler() {
       <CardFooter className="flex-col items-start gap-4">
         <Button onClick={handleSuggestTime} disabled={isLoading} className="w-full">
           {isLoading ? (
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            <Loader2 className="ml-2 h-4 w-4 animate-spin" />
           ) : (
-            <Sparkles className="mr-2 h-4 w-4" />
+            <Sparkles className="ml-2 h-4 w-4" />
           )}
-          Find Optimal Time
+          ابحث عن أفضل وقت
         </Button>
         {suggestion && (
           <div className="rounded-lg border bg-muted/50 p-4 w-full text-sm">
-            <p className="font-semibold">Suggested Time: <span className="font-normal text-primary">{format(new Date(suggestion.suggestedTime), "MMMM d, yyyy 'at' h:mm a")}</span></p>
-            <p className="mt-2 text-muted-foreground"><span className="font-semibold text-foreground">Reasoning:</span> {suggestion.reasoning}</p>
+            <p className="font-semibold">الوقت المقترح: <span className="font-normal text-primary">{format(new Date(suggestion.suggestedTime), "d MMMM, yyyy 'الساعة' h:mm a")}</span></p>
+            <p className="mt-2 text-muted-foreground"><span className="font-semibold text-foreground">السبب:</span> {suggestion.reasoning}</p>
           </div>
         )}
       </CardFooter>
