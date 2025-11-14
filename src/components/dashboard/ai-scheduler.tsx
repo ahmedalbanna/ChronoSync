@@ -84,9 +84,9 @@ export function AiScheduler() {
       <CardFooter className="flex-col items-start gap-4">
         <Button onClick={handleSuggestTime} disabled={isLoading} className="w-full">
           {isLoading ? (
-            <Loader2 className="ml-2 h-4 w-4 animate-spin" />
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
           ) : (
-            <Sparkles className="ml-2 h-4 w-4" />
+            <Sparkles className="mr-2 h-4 w-4" />
           )}
           ابحث عن أفضل وقت
         </Button>

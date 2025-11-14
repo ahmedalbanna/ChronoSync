@@ -6,7 +6,7 @@ import { ScrollArea } from "../ui/scroll-area";
 
 export function UpcomingEvents() {
   return (
-    <Card className="lg:col-span-4">
+    <Card className="lg:col-span-1">
       <CardHeader>
         <CardTitle>الأحداث القادمة</CardTitle>
         <CardDescription>اجتماعاتك ومواعيدك القليلة القادمة.</CardDescription>
@@ -27,7 +27,7 @@ export function UpcomingEvents() {
                   </p>
                   <div className="flex items-center pt-1">
                     {event.attendees.map((attendee) => (
-                      <Avatar key={attendee.id} className="h-6 w-6 -ml-2 border-2 border-card">
+                      <Avatar key={attendee.id} className="h-6 w-6 -mr-2 border-2 border-card">
                         <AvatarImage src={attendee.avatarUrl} data-ai-hint="person portrait" />
                         <AvatarFallback>{attendee.name.charAt(0)}</AvatarFallback>
                       </Avatar>

@@ -55,7 +55,7 @@ export function TaskList() {
   };
 
   return (
-    <Card className="lg:col-span-3">
+    <Card className="lg:col-span-2">
       <CardHeader>
         <CardTitle>المهام ذات الأولوية</CardTitle>
         <CardDescription>قائمة مهامك لهذا اليوم.</CardDescription>
