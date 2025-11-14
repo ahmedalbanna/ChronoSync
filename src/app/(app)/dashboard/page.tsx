@@ -11,9 +11,9 @@ export default function DashboardPage() {
           <AiScheduler />
           <OverviewCards />
        </div>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <UpcomingEvents />
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-[2fr_1fr]">
         <TaskList />
+        <UpcomingEvents />
       </div>
       <AiSuggestions />
     </div>

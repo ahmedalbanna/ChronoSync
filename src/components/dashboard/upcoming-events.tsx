@@ -6,13 +6,13 @@ import { ScrollArea } from "../ui/scroll-area";
 
 export function UpcomingEvents() {
   return (
-    <Card className="lg:col-span-1">
+    <Card>
       <CardHeader>
         <CardTitle>الأحداث القادمة</CardTitle>
         <CardDescription>اجتماعاتك ومواعيدك القليلة القادمة.</CardDescription>
       </CardHeader>
       <CardContent>
-        <ScrollArea className="h-72">
+        <ScrollArea className="h-96">
           <div className="space-y-4">
             {events.map((event) => (
               <div key={event.id} className="flex items-center gap-4">

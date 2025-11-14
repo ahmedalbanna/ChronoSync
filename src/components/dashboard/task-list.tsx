@@ -55,13 +55,13 @@ export function TaskList() {
   };
 
   return (
-    <Card className="lg:col-span-2">
+    <Card>
       <CardHeader>
         <CardTitle>المهام ذات الأولوية</CardTitle>
         <CardDescription>قائمة مهامك لهذا اليوم.</CardDescription>
       </CardHeader>
       <CardContent>
-        <ScrollArea className="h-72">
+        <ScrollArea className="h-96">
           <div className="space-y-4">
             {taskList.map((task) => (
               <div key={task.id} className="flex items-start gap-4">
